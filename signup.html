@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Login Page</title>
+</head>
+<style>
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+
+.container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+form {
+    display: grid;
+    grid-gap: 10px
+    box-shadow:100px;
+}
+
+label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+input[type="submit"] {
+    background-color: #4caf50;
+    color: #fff;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.sp{
+    color:red;}
+</style>
+
+
+
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        <form action="index.html" method="post">
+            <label for="username"><span class="sp">*</span>Username:</label>
+            <input type="text" id="username" name="username" required placeholder="Type your Username">
+
+            <label for="password"><span class="sp">*</span>Password:</label>
+            <input type="password" id="password" name="password" required placeholder="Type your Password">
+
+            <input type="submit" value="Login" window.location.href ="index.html">
+        </form>
+    </div>
+<script>
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/index.html")
+public class LoginServlet extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+
+             if ("your_username".equals(username) && "your_password".equals(password)) {
+            // Login successful
+            response.sendRedirect("success.html");
+        } else {
+            // Login failed
+            response.sendRedirect("failure.html");
+        }
+    }
+}
+
+function() {
+
+window.location.href="index.html"
+
+}
+}
+</script>
+
+</body>
+</html>
